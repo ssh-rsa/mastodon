@@ -1,7 +1,23 @@
+services:
+  caddy:
+    image: caddy:latest # Use the latest official Caddy image
+    container_name: caddy_reverse_proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"   # HTTP port
+      - "443:443" # HTTPS port
+      - "443:443/udp" # HTTP/3
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile # Mount your Caddyfile
+      - caddy_data:/data # Persist Caddy's data (certificates, etc.)
+      - caddy_config:/config # Persist Caddy's config
+    networks:
+      - external_network
+      - internal_network # Optional: define a network for Caddy and your backend services
+
+
 # This file is designed for production server deployment, not local development work
 # For a containerized local dev environment, see: https://github.com/mastodon/mastodon/blob/main/docs/DEVELOPMENT.md#docker
-
-services:
   db:
     restart: always
     image: postgres:14-alpine
@@ -59,7 +75,7 @@ services:
   web:
     # You can uncomment the following line if you want to not use the prebuilt image, for example if you have local code changes
     # build: .
-    image: ghcr.io/glitch-soc/mastodon:v4.3.8
+    image: ghcr.io/ssh-rsa/mastodon:v4.3.8
     restart: always
     env_file: .env.production
     command: bundle exec puma -C config/puma.rb
@@ -83,7 +99,7 @@ services:
     # build:
     #   dockerfile: ./streaming/Dockerfile
     #   context: .
-    image: ghcr.io/glitch-soc/mastodon-streaming:v4.3.8
+    image: ghcr.io/ssh-rsa/mastodon-streaming:v4.3.8
     restart: always
     env_file: .env.production
     command: node ./streaming/index.js
@@ -102,7 +118,7 @@ services:
   sidekiq:
     # You can uncomment the following line if you want to not use the prebuilt image, for example if you have local code changes
     # build: .
-    image: ghcr.io/glitch-soc/mastodon:v4.3.8
+    image: ghcr.io/ssh-rsa/mastodon:v4.3.8
     restart: always
     env_file: .env.production
     command: bundle exec sidekiq
@@ -115,7 +131,7 @@ services:
     volumes:
       - ./public/system:/mastodon/public/system
     healthcheck:
-      test: ['CMD-SHELL', "ps aux | grep '[s]idekiq\ 6' || false"]
+      test: ['CMD-SHELL', "ps aux | grep '[s]idekiq\ 7' || false"]
 
   ## Uncomment to enable federation with tor instances along with adding the following ENV variables
   ## http_hidden_proxy=http://privoxy:8118
@@ -134,7 +150,13 @@ services:
   #     - external_network
   #     - internal_network
 
+volumes:
+  caddy_data: # Docker volume for Caddy's data
+    driver: local
+  caddy_config: # Docker volume for Caddy's configuration
+    driver: local
+
 networks:
   external_network:
-  internal_network:
+  internal_network: # Optional: define a network
     internal: true
