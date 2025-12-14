@@ -1635,7 +1635,7 @@ zh-TW:
       disabled_account: 之後您的目前帳號將完全無法使用。但您可以存取資料匯出與重新啟用。
       followers: 此動作將會將目前帳號的所有跟隨者轉移至新帳號
       only_redirect_html: 或者，您也可以<a href="%{path}">僅於您的個人檔案中設定重新導向</a>。
-      other_data: 其他資料並不會自動轉移
+      other_data: 不會自動移動其他資料（包括您的嘟文和您跟隨之帳號列表）
       redirect: 您目前的帳號將於個人檔案頁面新增重新導向公告，並會被排除於搜尋結果之外
   moderation:
     title: 站務
@@ -1669,16 +1669,22 @@ zh-TW:
       body: "%{name} 於嘟文中提及您："
       subject: "%{name} 於嘟文中提及您"
       title: 新的提及
+    moderation_warning:
+      subject: 您已收到管理員警告
     poll:
       subject: 由 %{name} 發起的投票已結束
     quote:
       body: 您的嘟文被 %{name} 引用：
       subject: "%{name} 已引用您的嘟文"
       title: 新引用
+    quoted_update:
+      subject: "%{name} 已編輯一則您曾引用之嘟文"
     reblog:
       body: 您的嘟文被 %{name} 轉嘟：
       subject: "%{name} 已轉嘟您的嘟文"
       title: 新的轉嘟
+    severed_relationships:
+      subject: 由於管理員之決定，您已失去您的社交網路
     status:
       subject: "%{name} 剛剛嘟文"
     update:
@@ -1888,6 +1894,7 @@ zh-TW:
     errors:
       in_reply_not_found: 您嘗試回覆之嘟文似乎不存在。
       quoted_status_not_found: 您嘗試引用之嘟文似乎不存在。
+      quoted_user_not_mentioned: 無法於私訊嘟文中引用無提及之使用者。
     over_character_limit: 已超過 %{max} 字的限制
     pin_errors:
       direct: 無法釘選只有僅提及使用者可見之嘟文
@@ -2140,3 +2147,5 @@ zh-TW:
     not_supported: 此瀏覽器並不支援安全金鑰
     otp_required: 請先啟用兩階段驗證以使用安全金鑰。
     registered_on: 註冊於 %{date}
+  wrapstodon:
+    title: "%{name} 的 %{year} Mastodon 年度回顧 (Wrapstodon)"
