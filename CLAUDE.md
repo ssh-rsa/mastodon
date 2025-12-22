@@ -13,12 +13,14 @@ Mastodon is a free, open-source social network server based on ActivityPub. This
 ## Tech Stack
 
 ### Backend
+
 - **Ruby on Rails** 3.2+ - REST API and web pages
 - **PostgreSQL** 14+ - Main database
 - **Redis** 7.0+ - Caching and queueing
 - **Sidekiq** - Background job processing
 
 ### Frontend
+
 - **Node.js** 20+
 - **React.js** - UI components
 - **Redux** - State management
@@ -100,18 +102,21 @@ yarn build
 ## Code Conventions
 
 ### Ruby
+
 - Follow the RuboCop configuration (`.rubocop.yml`)
 - Use services for complex business logic (`app/services/`)
 - Keep controllers thin, models focused
 - Write RSpec tests for new features
 
 ### JavaScript
+
 - Follow ESLint configuration (`eslint.config.mjs`)
 - Use functional components with hooks
 - Follow Redux patterns for state management
 - Use TypeScript types where defined
 
 ### Commits
+
 - Write clear, descriptive commit messages
 - Reference issues when applicable
 - Keep commits focused and atomic
@@ -119,12 +124,14 @@ yarn build
 ## Common Tasks
 
 ### Adding a New API Endpoint
+
 1. Add route in `config/routes.rb`
 2. Create/update controller in `app/controllers/api/`
 3. Add service logic in `app/services/` if needed
 4. Write tests in `spec/requests/`
 
 ### Adding a Frontend Feature
+
 1. Create components in `app/javascript/mastodon/features/`
 2. Add Redux actions/reducers if needed
 3. Update relevant containers
@@ -132,6 +139,7 @@ yarn build
 5. Write tests in `spec/javascript/` or `.test.js` files
 
 ### Database Changes
+
 1. Generate migration: `rails g migration MigrationName`
 2. Edit migration in `db/migrate/`
 3. Run migration: `rails db:migrate`
@@ -141,22 +149,26 @@ yarn build
 ## Important Notes
 
 ### Federation
+
 - Mastodon is a federated system using ActivityPub
 - Changes to federation logic require careful consideration
 - See `FEDERATION.md` for more details
 
 ### Security
+
 - This is security-critical software
 - Always sanitize user input
 - Be careful with XSS, SQL injection, and other OWASP Top 10 vulnerabilities
 - Review `SECURITY.md` for security policies
 
 ### Performance
+
 - Background jobs should use Sidekiq workers
 - Heavy operations should be async
 - Database queries should be optimized (use `includes` to avoid N+1)
 
 ### i18n
+
 - All user-facing strings should be internationalized
 - Use `I18n.t()` in Ruby, `FormattedMessage` in React
 - Translations are managed via Crowdin
