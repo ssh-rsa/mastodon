@@ -40,13 +40,16 @@ Mastodon uses a sophisticated two-layer theming system:
 27 foundational colors that serve as building blocks:
 
 **Grays** (12 shades):
+
 - `--color-grey-950` (darkest) through `--color-grey-50` (lightest)
 - `--color-black` and `--color-white`
 
 **Brand Colors** (Indigo by default, 6 shades):
+
 - `--color-indigo-600` through `--color-indigo-50`
 
 **Status Colors**:
+
 - Red: `--color-red-500`, `--color-red-600`
 - Yellow: `--color-yellow-400`, `--color-yellow-600`, `--color-yellow-700`
 - Green: `--color-green-400`, `--color-green-600`
@@ -56,21 +59,25 @@ Mastodon uses a sophisticated two-layer theming system:
 90+ purpose-based variables organized into categories:
 
 **Text Tokens** (~30 variables):
+
 - Primary, secondary, tertiary text
 - Brand, error, warning, success states
 - On-brand, on-inverted, disabled states
 
 **Background Tokens** (~20 variables):
+
 - Primary, secondary, tertiary backgrounds
 - Brand backgrounds (base, soft, softer)
 - Status backgrounds (error, warning, success)
 - Overlays and media backgrounds
 
 **Border Tokens** (~8 variables):
+
 - Primary borders, media borders
 - Context-specific borders
 
 **Other Tokens**:
+
 - Shadows (dropdowns, overlays)
 - Graph/chart colors
 
@@ -96,6 +103,7 @@ This is the cleanest approach for a complete custom theme.
 #### Step 1: Choose Your Flavour
 
 Decide which flavour to customize:
+
 - `vanilla` - Standard Mastodon UI
 - `glitch` - Glitch-soc enhanced UI
 
@@ -116,6 +124,7 @@ mkdir -p app/javascript/skins/glitch/ocean-blue
 Create `names.yml` in each directory to provide the theme name:
 
 **`app/javascript/skins/vanilla/ocean-blue/names.yml`**:
+
 ```yaml
 en:
   skins:
@@ -124,6 +133,7 @@ en:
 ```
 
 **`app/javascript/skins/glitch/ocean-blue/names.yml`**:
+
 ```yaml
 en:
   skins:
@@ -149,37 +159,37 @@ First, let's define our ocean blue color palette:
 /* Ocean Blue Palette */
 
 /* Primary Blues - Deep ocean depths */
---ocean-depth-950: #041e2e;      // Deepest ocean
---ocean-depth-900: #062a42;      // Deep water
---ocean-depth-800: #083856;      // Dark ocean
---ocean-depth-700: #0a466a;      // Ocean blue
---ocean-depth-600: #0d5885;      // Medium ocean
+--ocean-depth-950: #041e2e; // Deepest ocean
+--ocean-depth-900: #062a42; // Deep water
+--ocean-depth-800: #083856; // Dark ocean
+--ocean-depth-700: #0a466a; // Ocean blue
+--ocean-depth-600: #0d5885; // Medium ocean
 
 /* Accent Blues - Surface waters */
---ocean-surface-500: #1a7baa;    // Bright ocean
---ocean-surface-400: #2e9ed4;    // Light ocean
---ocean-surface-300: #5cb8e6;    // Sky blue
---ocean-surface-200: #8dd0f2;    // Pale blue
---ocean-surface-100: #c7e9fa;    // Lightest blue
+--ocean-surface-500: #1a7baa; // Bright ocean
+--ocean-surface-400: #2e9ed4; // Light ocean
+--ocean-surface-300: #5cb8e6; // Sky blue
+--ocean-surface-200: #8dd0f2; // Pale blue
+--ocean-surface-100: #c7e9fa; // Lightest blue
 
 /* Turquoise - Tropical waters */
---ocean-turquoise-600: #0d9488;  // Deep turquoise
---ocean-turquoise-500: #14b8a6;  // Turquoise
---ocean-turquoise-400: #2dd4bf;  // Light turquoise
+--ocean-turquoise-600: #0d9488; // Deep turquoise
+--ocean-turquoise-500: #14b8a6; // Turquoise
+--ocean-turquoise-400: #2dd4bf; // Light turquoise
 
 /* Coral - Reef accents */
---ocean-coral-600: #e76f51;      // Deep coral
---ocean-coral-500: #f4a261;      // Coral
---ocean-coral-400: #fbb675;      // Light coral
+--ocean-coral-600: #e76f51; // Deep coral
+--ocean-coral-500: #f4a261; // Coral
+--ocean-coral-400: #fbb675; // Light coral
 
 /* Seafoam - Success states */
---ocean-seafoam-600: #059669;    // Deep seafoam
---ocean-seafoam-500: #10b981;    // Seafoam
---ocean-seafoam-400: #34d399;    // Light seafoam
+--ocean-seafoam-600: #059669; // Deep seafoam
+--ocean-seafoam-500: #10b981; // Seafoam
+--ocean-seafoam-400: #34d399; // Light seafoam
 
 /* Sand - Neutral tones */
---ocean-sand-100: #fef7ed;       // Light sand
---ocean-sand-200: #fde8d2;       // Sand
+--ocean-sand-100: #fef7ed; // Light sand
+--ocean-sand-200: #fde8d2; // Sand
 ```
 
 ### Complete Theme Implementation
@@ -238,64 +248,64 @@ html {
      ===================================== */
 
   /* TEXT TOKENS */
-  --color-text-primary: #e0f2f7;              // Soft white with blue tint
-  --color-text-secondary: #94c5d9;            // Muted light blue
-  --color-text-tertiary: #6397b3;             // Subtle blue-gray
-  --color-text-brand: #5eead4;                // Bright turquoise
-  --color-text-error: #fca5a5;                // Soft coral red
-  --color-text-warning: #fcd34d;              // Warm yellow
-  --color-text-success: #6ee7b7;              // Seafoam green
-  --color-text-disabled: #4a6b7d;             // Desaturated blue-gray
-  --color-text-on-brand-base: #042f2e;        // Dark text on turquoise
-  --color-text-on-error-base: #450a0a;        // Dark text on red
-  --color-text-on-warning-base: #451a03;      // Dark text on yellow
-  --color-text-on-success-base: #064e3b;      // Dark text on green
-  --color-text-on-inverted-base: #0a1929;     // Dark text on light bg
-  --color-text-on-media: #ffffff;             // White text on media
-  --color-text-placeholder: #5d8aa3;          // Placeholder blue-gray
+  --color-text-primary: #e0f2f7; // Soft white with blue tint
+  --color-text-secondary: #94c5d9; // Muted light blue
+  --color-text-tertiary: #6397b3; // Subtle blue-gray
+  --color-text-brand: #5eead4; // Bright turquoise
+  --color-text-error: #fca5a5; // Soft coral red
+  --color-text-warning: #fcd34d; // Warm yellow
+  --color-text-success: #6ee7b7; // Seafoam green
+  --color-text-disabled: #4a6b7d; // Desaturated blue-gray
+  --color-text-on-brand-base: #042f2e; // Dark text on turquoise
+  --color-text-on-error-base: #450a0a; // Dark text on red
+  --color-text-on-warning-base: #451a03; // Dark text on yellow
+  --color-text-on-success-base: #064e3b; // Dark text on green
+  --color-text-on-inverted-base: #0a1929; // Dark text on light bg
+  --color-text-on-media: #ffffff; // White text on media
+  --color-text-placeholder: #5d8aa3; // Placeholder blue-gray
 
   /* BACKGROUND TOKENS */
-  --color-bg-primary: #0a1929;                // Deep ocean background
-  --color-bg-secondary: #0f2839;              // Slightly lighter ocean
-  --color-bg-tertiary: #14354a;               // Medium ocean depth
-  --color-bg-brand-base: #0d9488;             // Turquoise buttons
-  --color-bg-brand-base-hover: #0f766e;       // Darker turquoise on hover
-  --color-bg-brand-base-active: #115e59;      // Active turquoise
-  --color-bg-brand-soft: #134e4a;             // Soft turquoise background
-  --color-bg-brand-softer: #0a2e29;           // Subtle turquoise tint
-  --color-bg-error-base: #dc2626;             // Error red
-  --color-bg-error-soft: #450a0a;             // Soft error background
-  --color-bg-error-softer: #1a0a0a;           // Subtle error tint
-  --color-bg-warning-base: #d97706;           // Warning orange
-  --color-bg-warning-soft: #451a03;           // Soft warning background
-  --color-bg-warning-softer: #1a0f05;         // Subtle warning tint
-  --color-bg-success-base: #059669;           // Success green
-  --color-bg-success-soft: #064e3b;           // Soft success background
-  --color-bg-success-softer: #051f1a;         // Subtle success tint
-  --color-bg-overlay: rgba(10, 25, 41, 0.9);  // Modal overlay
-  --color-bg-media: #0a1929;                  // Media background
-  --color-bg-disabled: #19425b;               // Disabled state
-  --color-bg-inverted-primary: #e0f2f7;       // Light background (inverted)
-  --color-bg-inverted-secondary: #b5ddec;     // Light secondary (inverted)
+  --color-bg-primary: #0a1929; // Deep ocean background
+  --color-bg-secondary: #0f2839; // Slightly lighter ocean
+  --color-bg-tertiary: #14354a; // Medium ocean depth
+  --color-bg-brand-base: #0d9488; // Turquoise buttons
+  --color-bg-brand-base-hover: #0f766e; // Darker turquoise on hover
+  --color-bg-brand-base-active: #115e59; // Active turquoise
+  --color-bg-brand-soft: #134e4a; // Soft turquoise background
+  --color-bg-brand-softer: #0a2e29; // Subtle turquoise tint
+  --color-bg-error-base: #dc2626; // Error red
+  --color-bg-error-soft: #450a0a; // Soft error background
+  --color-bg-error-softer: #1a0a0a; // Subtle error tint
+  --color-bg-warning-base: #d97706; // Warning orange
+  --color-bg-warning-soft: #451a03; // Soft warning background
+  --color-bg-warning-softer: #1a0f05; // Subtle warning tint
+  --color-bg-success-base: #059669; // Success green
+  --color-bg-success-soft: #064e3b; // Soft success background
+  --color-bg-success-softer: #051f1a; // Subtle success tint
+  --color-bg-overlay: rgba(10, 25, 41, 0.9); // Modal overlay
+  --color-bg-media: #0a1929; // Media background
+  --color-bg-disabled: #19425b; // Disabled state
+  --color-bg-inverted-primary: #e0f2f7; // Light background (inverted)
+  --color-bg-inverted-secondary: #b5ddec; // Light secondary (inverted)
 
   /* BORDER TOKENS */
-  --color-border-primary: #2e7a9f;            // Medium ocean border
-  --color-border-media: #235e7d;              // Media border
-  --color-border-on-secondary: #4a95b8;       // Border on secondary bg
-  --color-border-on-brand: #5eead4;           // Border on brand bg
-  --color-border-on-error: #fca5a5;           // Border on error bg
-  --color-border-on-warning: #fcd34d;         // Border on warning bg
-  --color-border-on-success: #6ee7b7;         // Border on success bg
-  --color-border-on-inverted: #6dadc9;        // Border on light bg
+  --color-border-primary: #2e7a9f; // Medium ocean border
+  --color-border-media: #235e7d; // Media border
+  --color-border-on-secondary: #4a95b8; // Border on secondary bg
+  --color-border-on-brand: #5eead4; // Border on brand bg
+  --color-border-on-error: #fca5a5; // Border on error bg
+  --color-border-on-warning: #fcd34d; // Border on warning bg
+  --color-border-on-success: #6ee7b7; // Border on success bg
+  --color-border-on-inverted: #6dadc9; // Border on light bg
 
   /* SHADOW TOKENS */
   --color-shadow-dropdown: rgba(0, 0, 0, 0.4);
   --color-shadow-overlay-icon: rgba(10, 25, 41, 0.7);
 
   /* GRAPH/CHART TOKENS */
-  --color-graph-stroke-primary: #14b8a6;      // Turquoise chart line
-  --color-graph-stroke-warning: #fbbf24;      // Warning chart line
-  --color-graph-stroke-disabled: #4a6b7d;     // Disabled chart line
+  --color-graph-stroke-primary: #14b8a6; // Turquoise chart line
+  --color-graph-stroke-warning: #fbbf24; // Warning chart line
+  --color-graph-stroke-disabled: #4a6b7d; // Disabled chart line
   --color-graph-fill-primary: rgba(20, 184, 166, 0.2);
   --color-graph-fill-warning: rgba(251, 191, 36, 0.2);
   --color-graph-fill-disabled: rgba(74, 107, 125, 0.2);
@@ -375,9 +385,11 @@ a {
 /* Navigation with ocean theme */
 .navigation-panel,
 .compose-panel {
-  background: linear-gradient(180deg,
+  background: linear-gradient(
+    180deg,
     var(--color-bg-primary) 0%,
-    color-mix(in srgb, var(--color-bg-primary) 95%, var(--color-indigo-600) 5%) 100%
+    color-mix(in srgb, var(--color-bg-primary) 95%, var(--color-indigo-600) 5%)
+      100%
   );
 }
 
@@ -458,55 +470,55 @@ html {
      ===================================== */
 
   /* TEXT TOKENS */
-  --color-text-primary: #0a1929;              // Deep ocean text
-  --color-text-secondary: #14354a;            // Dark blue-gray
-  --color-text-tertiary: #2e7a9f;             // Medium blue
-  --color-text-brand: #0f766e;                // Dark turquoise
-  --color-text-error: #b91c1c;                // Deep red
-  --color-text-warning: #b45309;              // Deep orange
-  --color-text-success: #047857;              // Deep green
-  --color-text-disabled: #91c5db;             // Light blue-gray
-  --color-text-on-brand-base: #ffffff;        // White on turquoise
-  --color-text-on-error-base: #ffffff;        // White on red
-  --color-text-on-warning-base: #ffffff;      // White on orange
-  --color-text-on-success-base: #ffffff;      // White on green
-  --color-text-on-inverted-base: #e0f2f7;     // Light text on dark
-  --color-text-on-media: #ffffff;             // White on media
-  --color-text-placeholder: #6dadc9;          // Blue-gray placeholder
+  --color-text-primary: #0a1929; // Deep ocean text
+  --color-text-secondary: #14354a; // Dark blue-gray
+  --color-text-tertiary: #2e7a9f; // Medium blue
+  --color-text-brand: #0f766e; // Dark turquoise
+  --color-text-error: #b91c1c; // Deep red
+  --color-text-warning: #b45309; // Deep orange
+  --color-text-success: #047857; // Deep green
+  --color-text-disabled: #91c5db; // Light blue-gray
+  --color-text-on-brand-base: #ffffff; // White on turquoise
+  --color-text-on-error-base: #ffffff; // White on red
+  --color-text-on-warning-base: #ffffff; // White on orange
+  --color-text-on-success-base: #ffffff; // White on green
+  --color-text-on-inverted-base: #e0f2f7; // Light text on dark
+  --color-text-on-media: #ffffff; // White on media
+  --color-text-placeholder: #6dadc9; // Blue-gray placeholder
 
   /* BACKGROUND TOKENS */
-  --color-bg-primary: #ffffff;                // White background
-  --color-bg-secondary: #f4fbfe;              // Very light blue
-  --color-bg-tertiary: #e8f6fc;               // Light blue
-  --color-bg-brand-base: #0d9488;             // Turquoise buttons
-  --color-bg-brand-base-hover: #0f766e;       // Darker turquoise hover
-  --color-bg-brand-base-active: #115e59;      // Active turquoise
-  --color-bg-brand-soft: #ccfbf1;             // Soft turquoise bg
-  --color-bg-brand-softer: #f0fdfa;           // Very soft turquoise
-  --color-bg-error-base: #dc2626;             // Error red
-  --color-bg-error-soft: #fee2e2;             // Soft error bg
-  --color-bg-error-softer: #fef2f2;           // Very soft error
-  --color-bg-warning-base: #d97706;           // Warning orange
-  --color-bg-warning-soft: #fed7aa;           // Soft warning bg
-  --color-bg-warning-softer: #fffbeb;         // Very soft warning
-  --color-bg-success-base: #059669;           // Success green
-  --color-bg-success-soft: #d1fae5;           // Soft success bg
-  --color-bg-success-softer: #f0fdf4;         // Very soft success
-  --color-bg-overlay: rgba(10, 25, 41, 0.8);  // Modal overlay
-  --color-bg-media: #f4fbfe;                  // Media background
-  --color-bg-disabled: #e8f6fc;               // Disabled state
-  --color-bg-inverted-primary: #0a1929;       // Dark background
-  --color-bg-inverted-secondary: #14354a;     // Dark secondary
+  --color-bg-primary: #ffffff; // White background
+  --color-bg-secondary: #f4fbfe; // Very light blue
+  --color-bg-tertiary: #e8f6fc; // Light blue
+  --color-bg-brand-base: #0d9488; // Turquoise buttons
+  --color-bg-brand-base-hover: #0f766e; // Darker turquoise hover
+  --color-bg-brand-base-active: #115e59; // Active turquoise
+  --color-bg-brand-soft: #ccfbf1; // Soft turquoise bg
+  --color-bg-brand-softer: #f0fdfa; // Very soft turquoise
+  --color-bg-error-base: #dc2626; // Error red
+  --color-bg-error-soft: #fee2e2; // Soft error bg
+  --color-bg-error-softer: #fef2f2; // Very soft error
+  --color-bg-warning-base: #d97706; // Warning orange
+  --color-bg-warning-soft: #fed7aa; // Soft warning bg
+  --color-bg-warning-softer: #fffbeb; // Very soft warning
+  --color-bg-success-base: #059669; // Success green
+  --color-bg-success-soft: #d1fae5; // Soft success bg
+  --color-bg-success-softer: #f0fdf4; // Very soft success
+  --color-bg-overlay: rgba(10, 25, 41, 0.8); // Modal overlay
+  --color-bg-media: #f4fbfe; // Media background
+  --color-bg-disabled: #e8f6fc; // Disabled state
+  --color-bg-inverted-primary: #0a1929; // Dark background
+  --color-bg-inverted-secondary: #14354a; // Dark secondary
 
   /* BORDER TOKENS */
-  --color-border-primary: #b5ddec;            // Light ocean border
-  --color-border-media: #c7e9fa;              // Light media border
-  --color-border-on-secondary: #91c5db;       // Border on secondary
-  --color-border-on-brand: #5eead4;           // Border on brand
-  --color-border-on-error: #fca5a5;           // Border on error
-  --color-border-on-warning: #fcd34d;         // Border on warning
-  --color-border-on-success: #6ee7b7;         // Border on success
-  --color-border-on-inverted: #4a95b8;        // Border on dark
+  --color-border-primary: #b5ddec; // Light ocean border
+  --color-border-media: #c7e9fa; // Light media border
+  --color-border-on-secondary: #91c5db; // Border on secondary
+  --color-border-on-brand: #5eead4; // Border on brand
+  --color-border-on-error: #fca5a5; // Border on error
+  --color-border-on-warning: #fcd34d; // Border on warning
+  --color-border-on-success: #6ee7b7; // Border on success
+  --color-border-on-inverted: #4a95b8; // Border on dark
 
   /* SHADOW TOKENS */
   --color-shadow-dropdown: rgba(10, 25, 41, 0.1);
@@ -563,6 +575,7 @@ color-scheme: light;
 ### Create Names Files for Light Theme
 
 **`app/javascript/skins/vanilla/ocean-blue-light/names.yml`**:
+
 ```yaml
 en:
   skins:
@@ -571,6 +584,7 @@ en:
 ```
 
 **`app/javascript/skins/glitch/ocean-blue-light/names.yml`**:
+
 ```yaml
 en:
   skins:
@@ -622,13 +636,7 @@ Add subtle ocean wave animations:
 }
 
 .ocean-animated-bg {
-  background: linear-gradient(
-    -45deg,
-    #0a1929,
-    #0f2839,
-    #14354a,
-    #0f2839
-  );
+  background: linear-gradient(-45deg, #0a1929, #0f2839, #14354a, #0f2839);
   background-size: 400% 400%;
   animation: ocean-wave 15s ease infinite;
 }
@@ -656,7 +664,7 @@ html[data-ocean-variant='storm'] {
 /* Coral Reef - Vibrant colors */
 html[data-ocean-variant='reef'] {
   --color-indigo-500: #ec4899; // Pink
-  --color-green-400: #f97316;  // Orange coral
+  --color-green-400: #f97316; // Orange coral
 }
 ```
 
@@ -718,6 +726,7 @@ Add modern glassmorphism to modals and overlays:
 ### Local Development
 
 1. **Start the development server**:
+
    ```bash
    # Terminal 1: Rails server
    bin/rails server
@@ -742,6 +751,7 @@ Add modern glassmorphism to modals and overlays:
 Ensure your theme works properly across all components:
 
 #### Visual Elements
+
 - [ ] Text is readable in all states (primary, secondary, disabled)
 - [ ] Buttons have proper contrast and hover states
 - [ ] Links are distinguishable from regular text
@@ -749,6 +759,7 @@ Ensure your theme works properly across all components:
 - [ ] Borders and dividers are visible but not overwhelming
 
 #### Components
+
 - [ ] Navigation panels render correctly
 - [ ] Compose box is usable and attractive
 - [ ] Timeline posts are readable
@@ -759,12 +770,14 @@ Ensure your theme works properly across all components:
 - [ ] Notification badges are visible
 
 #### Accessibility
+
 - [ ] Contrast ratios meet WCAG AA standards (4.5:1 for text)
 - [ ] Focus indicators are visible
 - [ ] Color is not the only indicator of state
 - [ ] High contrast mode still works
 
 #### Browser Testing
+
 - [ ] Chrome/Edge
 - [ ] Firefox
 - [ ] Safari
@@ -783,6 +796,7 @@ npx axe http://localhost:3000 --tags wcag2aa
 ```
 
 Online tools:
+
 - [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
 - [Coolors Contrast Checker](https://coolors.co/contrast-checker)
 - [Adobe Color Accessibility Tools](https://color.adobe.com/create/color-accessibility)
@@ -800,7 +814,8 @@ html[data-debug='true'] {
 
   /* Show CSS variable values */
   body::before {
-    content: 'Primary BG: ' var(--color-bg-primary) ' | Brand: ' var(--color-text-brand);
+    content: 'Primary BG: ' var(--color-bg-primary) ' | Brand: '
+      var(--color-text-brand);
     position: fixed;
     bottom: 0;
     left: 0;
@@ -823,12 +838,14 @@ Enable with: `<html data-debug="true">`
 ### Production Build
 
 1. **Build assets**:
+
    ```bash
    # Full production build
    RAILS_ENV=production bundle exec rails assets:precompile
    ```
 
 2. **Verify build output**:
+
    ```bash
    # Check that theme files were generated
    ls -la public/packs/css/skins/*ocean-blue*
@@ -854,6 +871,7 @@ Instance administrators can set your theme as the default:
    - Set "Default Theme" to "Ocean Blue"
 
 2. **Via Environment Variable**:
+
    ```bash
    # In .env.production
    DEFAULT_THEME=ocean-blue
@@ -870,6 +888,7 @@ Instance administrators can set your theme as the default:
 To share your theme with others:
 
 1. **Create a repository**:
+
    ```bash
    git init ocean-blue-theme
    cd ocean-blue-theme
@@ -882,7 +901,8 @@ To share your theme with others:
    ```
 
 2. **Add installation instructions**:
-   ```markdown
+
+   ````markdown
    # Ocean Blue Theme for Mastodon
 
    ## Installation
@@ -892,13 +912,18 @@ To share your theme with others:
       cp -r skins/vanilla/ocean-blue your-mastodon/app/javascript/skins/vanilla/
       cp -r skins/glitch/ocean-blue your-mastodon/app/javascript/skins/glitch/
       ```
+   ````
 
    2. Rebuild assets:
+
       ```bash
       RAILS_ENV=production bundle exec rails assets:precompile
       ```
 
    3. Restart Mastodon
+
+   ```
+
    ```
 
 3. **Publish**:
@@ -917,6 +942,7 @@ To share your theme with others:
 **Solutions**:
 
 1. **Check file structure**:
+
    ```bash
    # Should see:
    app/javascript/skins/vanilla/ocean-blue/common.scss
@@ -924,14 +950,16 @@ To share your theme with others:
    ```
 
 2. **Verify names.yml format**:
+
    ```yaml
    en:
      skins:
-       vanilla:  # Must match flavour name
-         ocean-blue: Ocean Blue  # Must match directory name
+       vanilla: # Must match flavour name
+         ocean-blue: Ocean Blue # Must match directory name
    ```
 
 3. **Rebuild and restart**:
+
    ```bash
    # Clear cache
    rm -rf public/packs
@@ -955,12 +983,16 @@ To share your theme with others:
    - Case-sensitive: `--color-bg-primary` not `--color-BG-Primary`
 
 2. **Inspect in DevTools**:
+
    ```javascript
    // In browser console
-   getComputedStyle(document.documentElement).getPropertyValue('--color-bg-primary')
+   getComputedStyle(document.documentElement).getPropertyValue(
+     '--color-bg-primary',
+   );
    ```
 
 3. **Check CSS specificity**:
+
    ```scss
    /* Your overrides must target html element */
    html {
@@ -983,18 +1015,17 @@ To share your theme with others:
 **Solutions**:
 
 1. **Check SCSS syntax**:
+
    ```bash
    # Validate SCSS
    npx sass app/javascript/skins/vanilla/ocean-blue/common.scss
    ```
 
 2. **Common syntax errors**:
+
    ```scss
    /* ✗ Missing semicolon */
-   --color-bg-primary: #0a1929
-
-   /* ✓ Correct */
-   --color-bg-primary: #0a1929;
+   --color-bg-primary: #0a1929 /* ✓ Correct */ --color-bg-primary: #0a1929;
 
    /* ✗ Invalid @use path */
    @use 'styles/common';
@@ -1004,6 +1035,7 @@ To share your theme with others:
    ```
 
 3. **Check import paths**:
+
    ```scss
    /* In skin files, always use: */
    @use '@/styles/common';
@@ -1019,6 +1051,7 @@ To share your theme with others:
 **Solutions**:
 
 1. **Use contrast checker**:
+
    ```
    Text color: #94c5d9
    Background: #0a1929
@@ -1026,12 +1059,13 @@ To share your theme with others:
    ```
 
 2. **Adjust lightness**:
+
    ```scss
    /* Too low contrast */
-   --color-text-secondary: #4a95b8;  /* 3.2:1 ✗ */
+   --color-text-secondary: #4a95b8; /* 3.2:1 ✗ */
 
    /* Better */
-   --color-text-secondary: #94c5d9;  /* 6.8:1 ✓ */
+   --color-text-secondary: #94c5d9; /* 6.8:1 ✓ */
    ```
 
 3. **Test with high contrast mode**:
@@ -1045,6 +1079,7 @@ To share your theme with others:
 **Solutions**:
 
 1. **Minimize animations**:
+
    ```scss
    /* Reduce animation complexity */
    @media (prefers-reduced-motion: reduce) {
@@ -1057,11 +1092,11 @@ To share your theme with others:
    ```
 
 2. **Optimize gradients**:
+
    ```scss
    /* Heavy - multiple gradients */
    background:
-     linear-gradient(45deg, ...),
-     linear-gradient(90deg, ...),
+     linear-gradient(45deg, ...), linear-gradient(90deg, ...),
      linear-gradient(135deg, ...);
 
    /* Lighter - single gradient */
@@ -1069,15 +1104,16 @@ To share your theme with others:
    ```
 
 3. **Reduce box-shadows**:
+
    ```scss
    /* Heavy */
    box-shadow:
-     0 2px 4px rgba(0,0,0,0.1),
-     0 4px 8px rgba(0,0,0,0.1),
-     0 8px 16px rgba(0,0,0,0.1);
+     0 2px 4px rgba(0, 0, 0, 0.1),
+     0 4px 8px rgba(0, 0, 0, 0.1),
+     0 8px 16px rgba(0, 0, 0, 0.1);
 
    /* Lighter */
-   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
    ```
 
 ---
@@ -1148,6 +1184,7 @@ Happy theming! 🌊
 ## Quick Reference
 
 ### File Structure
+
 ```
 app/javascript/skins/
   vanilla/
