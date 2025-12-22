@@ -62,7 +62,7 @@ html {
   --color-text-on-warning-base: #451a03;
   --color-text-on-success-base: #064e3b;
   --color-text-on-inverted-base: #0a1929;
-  --color-text-on-media: #ffffff;
+  --color-text-on-media: #fff;
   --color-text-placeholder: #5d8aa3;
 
   /* BACKGROUND TOKENS */
@@ -83,7 +83,7 @@ html {
   --color-bg-success-base: #059669;
   --color-bg-success-soft: #064e3b;
   --color-bg-success-softer: #051f1a;
-  --color-bg-overlay: rgba(10, 25, 41, 0.9);
+  --color-bg-overlay: rgba(10, 25, 41, 90%);
   --color-bg-media: #0a1929;
   --color-bg-disabled: #19425b;
   --color-bg-inverted-primary: #e0f2f7;
@@ -100,16 +100,16 @@ html {
   --color-border-on-inverted: #6dadc9;
 
   /* SHADOW TOKENS */
-  --color-shadow-dropdown: rgba(0, 0, 0, 0.4);
-  --color-shadow-overlay-icon: rgba(10, 25, 41, 0.7);
+  --color-shadow-dropdown: rgba(0, 0, 0, 40%);
+  --color-shadow-overlay-icon: rgba(10, 25, 41, 70%);
 
   /* GRAPH/CHART TOKENS */
   --color-graph-stroke-primary: #14b8a6;
   --color-graph-stroke-warning: #fbbf24;
   --color-graph-stroke-disabled: #4a6b7d;
-  --color-graph-fill-primary: rgba(20, 184, 166, 0.2);
-  --color-graph-fill-warning: rgba(251, 191, 36, 0.2);
-  --color-graph-fill-disabled: rgba(74, 107, 125, 0.2);
+  --color-graph-fill-primary: rgba(20, 184, 166, 20%);
+  --color-graph-fill-warning: rgba(251, 191, 36, 20%);
+  --color-graph-fill-disabled: rgba(74, 107, 125, 20%);
 
   /* =====================================
      ADDITIONAL CUSTOMIZATIONS
@@ -149,7 +149,7 @@ html {
 
   &:hover:not(:disabled) {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 30%);
   }
 
   &:active:not(:disabled) {
@@ -161,18 +161,20 @@ html {
 .status__wrapper,
 .detailed-status,
 .account__header {
-  box-shadow: 0 2px 8px rgba(13, 148, 136, 0.1);
+  box-shadow: 0 2px 8px rgba(13, 148, 136, 10%);
 
   &:hover {
-    box-shadow: 0 4px 16px rgba(13, 148, 136, 0.15);
+    box-shadow: 0 4px 16px rgba(13, 148, 136, 15%);
   }
 }
 
 .navigation-panel,
 .compose-panel {
-  background: linear-gradient(180deg,
+  background: linear-gradient(
+    180deg,
     var(--color-bg-primary) 0%,
-    color-mix(in srgb, var(--color-bg-primary) 95%, var(--color-indigo-600) 5%) 100%
+    color-mix(in srgb, var(--color-bg-primary) 95%, var(--color-indigo-600) 5%)
+      100%
   );
 }
 
@@ -184,4 +186,4 @@ html {
   background-color: var(--color-indigo-500);
 }
 
-color-scheme: dark;
+// color-scheme: dark;
