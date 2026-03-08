@@ -1,0 +1,14 @@
+@use '../variables' with (
+  $ui-base-color: #0a1929,
+  $ui-primary-color: #6dadc9,
+  $ui-secondary-color: #d9f0f8,
+  $ui-highlight-color: #14b8a6,
+  $ui-button-background-color: #0d9488,
+  $ui-button-focus-background-color: #0f766e,
+  $ui-button-focus-outline-color: #5eead4,
+  $ui-button-secondary-color: #14b8a6,
+  $ui-button-secondary-border-color: #14b8a6,
+  $ui-button-tertiary-color: #5eead4,
+  $ui-button-tertiary-border-color: #5eead4,
+  $ui-button-icon-hover-background-color: rgba(20, 184, 166, 40%)
+);

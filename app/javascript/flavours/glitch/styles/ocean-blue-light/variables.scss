@@ -1,0 +1,29 @@
+@use '../functions' with (
+  $darken-multiplier: 1,
+  $lighten-multiplier: -1
+);
+
+@use '../variables' with (
+  $base-overlay-background: #fff,
+  $ui-base-color: #f4fbfe,
+  $ui-base-lighter-color: #b5ddec,
+  $ui-secondary-color: #0a1929,
+  $ui-highlight-color: #0d9488,
+  $ui-button-background-color: #0d9488,
+  $ui-button-focus-background-color: #0f766e,
+  $ui-button-focus-outline-color: #2dd4bf,
+  $ui-button-secondary-color: #0d9488,
+  $ui-button-secondary-border-color: #0d9488,
+  $ui-button-secondary-focus-color: #fff,
+  $ui-button-tertiary-color: #0d9488,
+  $ui-button-tertiary-border-color: #0d9488,
+  $ui-button-icon-hover-background-color: rgba(13, 148, 136, 15%),
+  $primary-text-color: #0a1929,
+  $darker-text-color: #14354a,
+  $lighter-text-color: #14354a,
+  $highlight-text-color: #0d9488,
+  $dark-text-color: #2e7a9f,
+  $light-text-color: #2e7a9f,
+  $inverted-text-color: #0a1929,
+  $action-button-color: #4a95b8
+);

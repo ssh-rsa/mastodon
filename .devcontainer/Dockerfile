@@ -1,5 +1,6 @@
 # For details, see https://github.com/devcontainers/images/tree/main/src/ruby
 FROM mcr.microsoft.com/devcontainers/ruby:1-3.3-bookworm
+RUN rm -f /etc/apt/sources.list.d/yarn.list
 
 # Install node version from .nvmrc
 WORKDIR /app
