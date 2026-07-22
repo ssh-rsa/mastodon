@@ -1,0 +1,69 @@
+// Ocean Blue skin — shared token overrides.
+//
+// This partial is used by both the glitch and vanilla flavours
+// (see skins/glitch/ocean/common.scss and skins/vanilla/ocean/common.scss).
+//
+// The skin works by re-defining the base color palette (the ramps defined in
+// styles/mastodon/tokens/theme/_base.scss) rather than every semantic token:
+// all `--color-text-*` / `--color-bg-*` / `--color-border-*` tokens derive
+// from the grey and indigo ramps, so overriding those ramps recolors the
+// whole UI consistently in both the light and dark color schemes.
+
+// The accent ramp (replaces the stock indigo ramp): a cyan-leaning
+// ocean blue, hue ≈ 205.
+@mixin palette {
+  --color-indigo-50: #eef8ff;
+  --color-indigo-100: #d9efff;
+  --color-indigo-200: #bce4ff;
+  --color-indigo-300: #8ed3ff;
+  --color-indigo-400: #59b8fb;
+  --color-indigo-500: #339af7;
+  --color-indigo-600: #1d7ceb;
+  --color-indigo-700: #1565c9;
+  --color-indigo-800: #17539d;
+  --color-indigo-900: #19477c;
+  --color-indigo-950: #142c4b;
+
+  // The neutral ramp (replaces the stock grey ramp): blue-tinted
+  // "deep sea" slate instead of the stock purple-tinted grey.
+  --color-grey-50: #f3f7fa;
+  --color-grey-100: #e7eef4;
+  --color-grey-200: #cfdde8;
+  --color-grey-300: #a6c0d2;
+  --color-grey-400: #7899ad;
+  --color-grey-500: #587e95;
+  --color-grey-600: #46697f;
+  --color-grey-700: #3b5568;
+  --color-grey-800: #334756;
+  --color-grey-900: #1d2f3d;
+  --color-grey-950: #101c26;
+}
+
+// Scheme-specific fine-tuning on top of the recolored ramps.
+@mixin dark-tokens {
+  // A slightly colder, bluer shadow than the stock pure black.
+  --color-bg-blend: rgb(3 12 20 / 30%);
+}
+
+@mixin light-tokens {
+  // Very subtle blue tint instead of pure white.
+  --color-bg-primary: #fbfdff;
+}
+
+@mixin skin {
+  html {
+    @include palette;
+  }
+
+  // These selectors mirror the ones used by styles/mastodon/tokens/index.scss
+  // so that the overrides apply to exactly the same elements and win by
+  // appearing later in the cascade.
+  [data-color-scheme='dark'],
+  html:not([data-color-scheme]) {
+    @include dark-tokens;
+  }
+
+  [data-color-scheme='light'] {
+    @include light-tokens;
+  }
+}

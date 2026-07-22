@@ -1,0 +1,4 @@
+@use '@/flavours/glitch/styles/application';
+@use '../../shared/ocean';
+
+@include ocean.skin;
