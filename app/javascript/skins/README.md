@@ -8,11 +8,11 @@ worked example.
 
 Three independent settings combine to produce what a user sees:
 
-| Concept | What it is | Where users pick it |
-| --- | --- | --- |
-| **Flavour** | An entire frontend (JS + CSS). This fork ships `glitch` and `vanilla`. | Settings → Flavours |
-| **Skin** | A stylesheet for a flavour. This is what a color theme is. | Settings → Flavours → *(flavour)*, shown once a flavour has more than one skin |
-| **Color scheme** | Light, dark, or automatic (follow the OS). Applied *on top of* whatever skin is active. | Settings → Preferences → Appearance |
+| Concept          | What it is                                                                              | Where users pick it                                                            |
+| ---------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| **Flavour**      | An entire frontend (JS + CSS). This fork ships `glitch` and `vanilla`.                  | Settings → Flavours                                                            |
+| **Skin**         | A stylesheet for a flavour. This is what a color theme is.                              | Settings → Flavours → _(flavour)_, shown once a flavour has more than one skin |
+| **Color scheme** | Light, dark, or automatic (follow the OS). Applied _on top of_ whatever skin is active. | Settings → Preferences → Appearance                                            |
 
 The key consequence: **a single skin should support both light and dark**.
 You do not create separate "my-theme-light" and "my-theme-dark" skins; you
@@ -105,9 +105,9 @@ files that use it.
 
 ### 2. Recolor the palette
 
-Override the ramps on `html`, *after* the application import. Generate a
+Override the ramps on `html`, _after_ the application import. Generate a
 tint/shade ramp from your base color (tools like Tailwind's palette
-generator or oklch.com help), keeping each step's *lightness* close to the
+generator or oklch.com help), keeping each step's _lightness_ close to the
 stock ramp so text/background contrast keeps working:
 
 ```scss
@@ -147,14 +147,14 @@ html:not([data-color-scheme]) {
 
 The most useful semantic tokens:
 
-| Token | Role |
-| --- | --- |
-| `--color-bg-primary` / `-secondary` / `-tertiary` | Main surfaces (columns, cards, panels) |
-| `--color-text-primary` / `-secondary` | Body and muted text |
-| `--color-text-brand` | Links and accent text |
-| `--color-bg-brand-base` / `-soft` / `-softest` | Buttons and accent fills |
-| `--color-border-primary` / `-brand` | Dividers and outlines |
-| `--color-text-error` / `-warning` / `-success` (+ matching `bg`/`border`) | State colors |
+| Token                                                                     | Role                                   |
+| ------------------------------------------------------------------------- | -------------------------------------- |
+| `--color-bg-primary` / `-secondary` / `-tertiary`                         | Main surfaces (columns, cards, panels) |
+| `--color-text-primary` / `-secondary`                                     | Body and muted text                    |
+| `--color-text-brand`                                                      | Links and accent text                  |
+| `--color-bg-brand-base` / `-soft` / `-softest`                            | Buttons and accent fills               |
+| `--color-border-primary` / `-brand`                                       | Dividers and outlines                  |
+| `--color-text-error` / `-warning` / `-success` (+ matching `bg`/`border`) | State colors                           |
 
 Read `tokens/theme/_dark.scss` and `_light.scss` for the full list. Tokens
 marked `// legacy` still work but may be consolidated in the future — prefer
