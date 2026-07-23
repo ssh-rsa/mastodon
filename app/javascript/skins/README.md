@@ -21,18 +21,18 @@ create one skin whose colors respond to the user's light/dark preference.
 ## How colors work: design tokens
 
 All colors in the UI are CSS custom properties ("design tokens"), defined in
-`app/javascript/styles/mastodon/tokens/` (the glitch flavour has an identical
-copy under `app/javascript/flavours/glitch/styles/mastodon/tokens/`). There
+`app/javascript/styles/mastodon/theme/` (the glitch flavour has an identical
+copy under `app/javascript/flavours/glitch/styles/mastodon/theme/`). There
 are two layers:
 
-1. **Palette ramps** (`tokens/theme/_base.scss`), set on `html` — raw colors
+1. **Palette ramps** (`theme/_base.scss`), set on `html` — raw colors
    in 11 steps from 50 (lightest) to 950 (darkest):
    - `--color-grey-*` — neutrals: backgrounds, borders, body text
    - `--color-indigo-*` — the brand/accent color: buttons, links, highlights
    - `--color-red-*`, `--color-yellow-*`, `--color-green-*` — error, warning,
      and success states
 
-2. **Semantic tokens** (`tokens/theme/_dark.scss` and `_light.scss`) — names
+2. **Semantic tokens** (`theme/_dark.scss` and `_light.scss`) — names
    like `--color-text-primary`, `--color-bg-secondary`,
    `--color-border-brand` that components actually use. Each scheme maps
    them to different palette steps, e.g. dark uses
@@ -131,7 +131,7 @@ it wins the cascade. This alone is a complete two-scheme theme.
 ### 3. (Optional) Fine-tune individual schemes
 
 To adjust a specific semantic token in only one scheme, mirror the selectors
-that `tokens/index.scss` uses — dark is the default when the attribute is
+that `theme/index.scss` uses — dark is the default when the attribute is
 absent, so it needs both selectors:
 
 ```scss
@@ -156,7 +156,7 @@ The most useful semantic tokens:
 | `--color-border-primary` / `-brand`                                       | Dividers and outlines                  |
 | `--color-text-error` / `-warning` / `-success` (+ matching `bg`/`border`) | State colors                           |
 
-Read `tokens/theme/_dark.scss` and `_light.scss` for the full list. Tokens
+Read `theme/_dark.scss` and `_light.scss` for the full list. Tokens
 marked `// legacy` still work but may be consolidated in the future — prefer
 the unmarked ones. You can also add `contrast-overrides`-style rules by
 targeting `[data-contrast='high']` if your palette needs high-contrast
